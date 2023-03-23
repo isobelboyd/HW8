@@ -4,62 +4,63 @@
 <main>
   <form action="/add" method="POST">
     <p>
-      <label for="first-name">First name:</label>
-      <input type="text" id="first-name" name="fname" />
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="name" />
     </p>
 
     <p>
-      <label for="ice-cream">
-        Favorite flavor of ice cream:
-        <select name="flavor" id="ice-cream">
+      <label for="outdoor-activity">
+        Favorite Outdoor Activity:
+        <select name="activity" id="outdoor-activity">
           <option value="" selected>Choose one ...</option>
-          <option value="vanilla">Vanilla</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="swirl">Swirl</option>
+          <option value="Biking">Biking</option>
+          <option value="Hiking">Hiking</option>
+          <option value="Fishing">Fishing</option>
+          <option value="Camping">Camping</option>
         </select>
       </label>
     </p>
     <p>
-      <label>Do you read for fun?</label>
+      <label>Do you exercise outside?</label>
       <label for="read-yes">
-        <input type="radio" id="read-yes" name="read" value="yes" /> Yes
+        <input type="radio" id="read-yes" name="exercise" value="yes" /> Yes
       </label>
 
       <label for="read-no">
-        <input type="radio" id="read-no" name="read" value="no" /> No
+        <input type="radio" id="read-no" name="exercise" value="no" /> No
       </label>
     </p>
 
     <fieldset>
-      <legend>Choose your favorite activities</legend>
-      <label for="for-running">
+      <legend>Choose your favorite environment</legend>
+      <label for="for-mountains">
         <input
           type="checkbox"
-          id="for-running"
-          name="activities"
-          value="running"
+          id="for-mountains"
+          name="location"
+          value="mountains"
         />
-        Running
+        Mountains
       </label>
 
-      <label for="for-biking">
+      <label for="for-ocean">
         <input
           type="checkbox"
-          id="for-biking"
-          name="activities"
-          value="biking"
+          id="for-ocean"
+          name="location"
+          value="ocean"
         />
-        Biking
+        Ocean
       </label>
 
-      <label for="for-reading">
+      <label for="for-forrest">
         <input
           type="checkbox"
-          id="for-reading"
-          name="activities"
-          value="reading"
+          id="for-forrest"
+          name="location"
+          value="forrest"
         />
-        Reading
+        Forrest
       </label>
     </fieldset>
 
@@ -74,9 +75,9 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Favorite Ice Cream</th>
-        <th>Read for Fun</th>
-        <th>Favorite Activities</th>
+        <th>Favorite Activity</th>
+        <th>Exercise for Fun</th>
+        <th>Favorite Location</th>
       </tr>
     </thead>
 
@@ -84,9 +85,9 @@
       {% for friend in friends %}
       <tr>
         <td>{{ friend.name }}</td>
-        <td>{{ friend.flavor }}</td>
-        <td>{{ friend.read }}</td>
-        <td>{{ friend.activities }}</td>
+        <td>{{ friend.activity }}</td>
+        <td>{{ friend.exercise }}</td>
+        <td>{{ friend.location }}</td>
       </tr>
       {% endfor %}
     </tbody>
