@@ -1,6 +1,23 @@
 # Flask Web Form Template
+Web form V1
+Eli Anderson
+Isobel Boyd
+
+This is a basic web form for cellecting information on books that users have read
+
+Instructions for running application
+
+1. Using pair programming
+2. Adding developers as collaborators to repository
+3. First person starts building out home page
+4. Commiting changes made and switching off developers
+5. Second person starts adding additional changes
+6. Both developers run the flask server and test connectivity
+
+
 
 Basic structure for starting a Flask web form project with Jinja templates
+
 
 ---
 

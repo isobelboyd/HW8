@@ -10,7 +10,7 @@ friend_list = [
 @app.route("/", methods=["GET", "POST"])
 def index():
     return render_template(
-        "index.html", pageTitle="Web form template", friends=friend_list
+        "index.html", pageTitle="Add a Book to My Library", friends=friend_list
     )
 
 
@@ -21,21 +21,31 @@ def add():
 
         form = request.form
 
-        fname = form["fname"]
-        flavor = form["flavor"]
-        read = form["read"]
-        # activities = form["activites"]
-        # print(request.form.getlist("activites"))
-        print(fname)
-        print(flavor)
-        print(read)
-        # print(activities)
+        title = form["title"]
+        author = form["author"]
+        pages = form["pages"]
+        Classification = form["Classification"]
+        details = form["details"]
+        procure = form["procure"]
+
+        print(title)
+        print(author)
+        print(pages)
+        print(Classification)
+        print(details)
+        print(procure)
+
+       
 
         friend_dict = {
-            "name": fname,
-            "flavor": flavor,
-            "read": read,
-            #   "activities": activities,
+            "title": Title,
+            "author": Author,
+            "pages": Pages,
+            "Classification": classification,
+            "details": Details,
+            "procure": Procurement,
+
+         
         }
         print(friend_dict)
         friend_list.append(friend_dict)
