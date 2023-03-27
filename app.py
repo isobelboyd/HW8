@@ -3,7 +3,12 @@ from flask import Flask, request, render_template, redirect, url_for
 app = Flask(__name__)
 
 friend_list = [
-    {"name": "Test", "flavor": "swirl", "read": "yes", "activities": "reading"}
+    {"title": "The Hobbit",
+     "author": "Tok", 
+     "pages": 224,
+     "classif": "fiction",
+     "details": "read", 
+     "procure": "Library",},
 ]
 
 
@@ -24,14 +29,14 @@ def add():
         title = form["title"]
         author = form["author"]
         pages = form["pages"]
-        Classification = form["Classification"]
+        classif = form["classif"]
         details = form["details"]
         procure = form["procure"]
 
         print(title)
         print(author)
         print(pages)
-        print(Classification)
+        print(classif)
         print(details)
         print(procure)
 
@@ -41,7 +46,7 @@ def add():
             "title": Title,
             "author": Author,
             "pages": Pages,
-            "Classification": classification,
+            "classif": classif,
             "details": Details,
             "procure": Procurement,
 
