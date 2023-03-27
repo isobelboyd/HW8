@@ -43,12 +43,12 @@ def add():
        
 
         friend_dict = {
-            "title": Title,
-            "author": Author,
-            "pages": Pages,
+            "title": title,
+            "author": author,
+            "pages": pages,
             "classif": classif,
-            "details": Details,
-            "procure": Procurement,
+            "details": details,
+            "procure": procure,
 
          
         }
