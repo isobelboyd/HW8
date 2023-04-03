@@ -11,6 +11,18 @@ friend_list = [
      "procure": "Library",},
 ]
 
+###### Custom Error Pages ######
+# Handling error 404 and displaying relevant web page
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template("404.html"), 404
+
+
+# Handling error 500 and displaying relevant web page
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template("500.html"), 500
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -53,8 +65,15 @@ def add():
          
         }
         print(friend_dict)
-        friend_list.append(friend_dict)
+        friend_list.append(
+            friend_dict
+        )
         print(friend_list)
+
+        flash(
+            "The book ;" + title + " has been added to the database.",
+            "success",
+        )
         return redirect(url_for("index"))
     else:
         return redirect(url_for("index"))
