@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, flash
 
 app = Flask(__name__)
+app.config['SECRET_KEY']="asdkjfaskjfga;sduvba"
 
 friend_list = [
     {"title": "The Hobbit",
@@ -71,7 +72,7 @@ def add():
         print(friend_list)
 
         flash(
-            "The book ;" + title + " has been added to the database.",
+            "The book " + title + " has been added to the database.",
             "success",
         )
         return redirect(url_for("index"))
